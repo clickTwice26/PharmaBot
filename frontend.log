@@ -6,9 +6,13 @@
    - Local:        http://localhost:3000
    - Environments: .env.local
 
- ✓ Ready in 1554ms
+ ✓ Ready in 1350ms
  ○ Compiling / ...
- ✓ Compiled / in 682ms (602 modules)
- ✓ Compiled in 73ms (272 modules)
- ✓ Compiled /login in 349ms (634 modules)
- ✓ Compiled /dashboard in 112ms (640 modules)
+ ✓ Compiled / in 1968ms (1409 modules)
+ ✓ Compiled in 144ms (676 modules)
+ ✓ Compiled /dashboard in 280ms (1407 modules)
+ ✓ Compiled /not-found in 166ms (1412 modules)
+ ✓ Compiled /login in 285ms (1462 modules)
+ ✓ Compiled /register in 192ms (1470 modules)
+ ✓ Compiled in 551ms (1479 modules)
+ ✓ Compiled /not-found in 239ms (1470 modules)
