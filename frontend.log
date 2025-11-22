@@ -1,0 +1,14 @@
+
+> pharmabot-frontend@0.1.0 dev
+> next dev
+
+   ▲ Next.js 14.0.4
+   - Local:        http://localhost:3000
+   - Environments: .env.local
+
+ ✓ Ready in 1554ms
+ ○ Compiling / ...
+ ✓ Compiled / in 682ms (602 modules)
+ ✓ Compiled in 73ms (272 modules)
+ ✓ Compiled /login in 349ms (634 modules)
+ ✓ Compiled /dashboard in 112ms (640 modules)
