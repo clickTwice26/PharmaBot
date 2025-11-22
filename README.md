@@ -49,6 +49,30 @@ pharmabot_tech/
 
 ## Setup Instructions
 
+### Quick Start (Recommended)
+
+**Run both servers with one command:**
+
+```bash
+# Cross-platform Python script (Recommended)
+python3 dev.py
+
+# Or use shell scripts
+./dev.sh          # macOS/Linux
+dev.bat           # Windows
+```
+
+This script will:
+- ✅ Check and install all dependencies
+- ✅ Create virtual environment if needed
+- ✅ Set up the database
+- ✅ Generate SECRET_KEY if not configured
+- ✅ Start both frontend and backend servers
+- ✅ Show live logs from both servers
+- ✅ Handle graceful shutdown with Ctrl+C
+
+### Manual Setup
+
 ### Backend Setup
 
 1. Navigate to the backend directory:
@@ -109,6 +133,33 @@ npm run dev
 ```
 
 The application will be available at: http://localhost:3000
+
+### Using the Development Script
+
+The `dev.sh` (macOS/Linux) or `dev.bat` (Windows) script provides a robust way to run both servers:
+
+**Features:**
+- 🔍 Pre-flight checks for Python, Node.js, and dependencies
+- 🔧 Automatic dependency installation
+- 🗄️ Database setup and migrations
+- 🔑 SECRET_KEY generation
+- 🚀 Concurrent server startup
+- 📊 Live log tailing
+- 🛑 Clean shutdown on Ctrl+C
+- ⚡ Port conflict resolution
+
+**Usage:**
+```bash
+# Start both servers
+./dev.sh
+
+# View logs in separate terminals
+tail -f backend.log
+tail -f frontend.log
+
+# Stop servers
+Press Ctrl+C in the script terminal
+```
 
 ## Usage
 
