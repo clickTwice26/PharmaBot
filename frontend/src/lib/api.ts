@@ -87,6 +87,15 @@ export const authService = {
   isAuthenticated(): boolean {
     return !!localStorage.getItem('access_token')
   },
+
+  getToken(): string | null {
+    return localStorage.getItem('access_token')
+  },
+
+  async getCurrentUser() {
+    const response = await api.get('/auth/me')
+    return response.data
+  },
 }
 
 export const prescriptionService = {
@@ -100,6 +109,16 @@ export const prescriptionService = {
       },
     })
 
+    return response.data
+  },
+
+  async getHistory() {
+    const response = await api.get('/prescriptions/history')
+    return response.data
+  },
+
+  async getPrescription(id: number) {
+    const response = await api.get(`/prescriptions/${id}`)
     return response.data
   },
 }

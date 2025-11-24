@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { FaPills, FaRobot, FaShieldAlt, FaBolt, FaMobileAlt, FaChartLine } from 'react-icons/fa'
 import { authService } from '@/lib/api'
-import Button from '@/components/ui/Button'
-import Card from '@/components/ui/Card'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
 
 export default function Home() {
   const router = useRouter()

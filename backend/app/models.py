@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String, DateTime, Text, JSON
 from datetime import datetime
 from app.database import Base
 
@@ -26,5 +26,6 @@ class Prescription(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, nullable=False)
     filename = Column(String, nullable=False)
-    analysis = Column(String, nullable=True)
+    analysis = Column(Text, nullable=True)  # Raw AI analysis text
+    structured_data = Column(JSON, nullable=True)  # Machine-readable JSON schema
     created_at = Column(DateTime, default=datetime.utcnow)

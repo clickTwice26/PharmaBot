@@ -1,15 +1,16 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { FaUser, FaLock, FaCheck, FaTimes, FaPills, FaArrowLeft } from 'react-icons/fa'
+import { FaPills, FaUser, FaLock, FaCheckCircle } from 'react-icons/fa'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import { authService } from '@/lib/api'
-import Link from 'next/link'
-import Button from '@/components/ui/Button'
-import Input from '@/components/ui/Input'
-import Card from '@/components/ui/Card'
 import toast, { Toaster } from 'react-hot-toast'
+import Link from 'next/link'
 
 export default function RegisterPage() {
   const router = useRouter()
@@ -19,33 +20,21 @@ export default function RegisterPage() {
     confirmPassword: ''
   })
   const [loading, setLoading] = useState(false)
-  const [passwordStrength, setPasswordStrength] = useState({
-    hasLength: false,
-    hasNumber: false,
-    hasSpecial: false,
-    hasUpper: false
-  })
 
-  useEffect(() => {
-    const password = formData.password
-    setPasswordStrength({
-      hasLength: password.length >= 8,
-      hasNumber: /\d/.test(password),
-      hasSpecial: /[!@#$%^&*(),.?":{}|<>]/.test(password),
-      hasUpper: /[A-Z]/.test(password)
-    })
-  }, [formData.password])
+  const passwordStrength = {
+    length: formData.password.length >= 8,
+    hasNumber: /\d/.test(formData.password),
+    hasUpper: /[A-Z]/.test(formData.password),
+    hasSpecial: /[!@#$%^&*]/.test(formData.password)
+  }
+
+  const isPasswordMatch = formData.password === formData.confirmPassword && formData.confirmPassword !== ''
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     if (formData.password !== formData.confirmPassword) {
-      toast.error('Passwords do not match!')
-      return
-    }
-
-    if (!Object.values(passwordStrength).every(Boolean)) {
-      toast.error('Password does not meet requirements!')
+      toast.error('Passwords do not match')
       return
     }
 
@@ -53,184 +42,158 @@ export default function RegisterPage() {
 
     try {
       await authService.register(formData.username, formData.password)
-      toast.success('Account created successfully!')
-      setTimeout(() => router.push('/login'), 1000)
-    } catch (err: any) {
-      toast.error(err.response?.data?.detail || 'Registration failed. Please try again.')
+      toast.success('Registration successful!')
+      setTimeout(() => router.push('/login'), 500)
+    } catch (error: any) {
+      toast.error(error.response?.data?.detail || 'Registration failed')
     } finally {
       setLoading(false)
     }
   }
 
-  const PasswordRequirement = ({ met, text }: { met: boolean; text: string }) => (
-    <motion.div
-      initial={{ opacity: 0, x: -10 }}
-      animate={{ opacity: 1, x: 0 }}
-      className="flex items-center space-x-2 text-sm"
-    >
-      {met ? (
-        <FaCheck className="text-green-500" />
-      ) : (
-        <FaTimes className="text-gray-400" />
-      )}
-      <span className={met ? 'text-green-700' : 'text-gray-500'}>{text}</span>
-    </motion.div>
-  )
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100 p-4">
       <Toaster position="top-center" />
       
-      {/* Background Decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="w-full max-w-md"
+      >
+        {/* Logo */}
         <motion.div
-          className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
-          animate={{
-            scale: [1, 1.3, 1],
-            x: [0, 50, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
-          animate={{
-            scale: [1.3, 1, 1.3],
-            x: [0, -50, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-      </div>
-
-      <div className="max-w-md w-full relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.2, type: "spring" }}
+          className="flex justify-center mb-8"
         >
-          <Link href="/" className="flex items-center justify-center space-x-2 mb-8 text-gray-600 hover:text-indigo-600 transition-colors">
-            <FaArrowLeft />
-            <span>Back to Home</span>
-          </Link>
-
-          <div className="text-center mb-8">
-            <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mb-4"
-            >
-              <FaPills className="w-8 h-8 text-white" />
-            </motion.div>
-            <h2 className="text-4xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              Join PharmaBot
-            </h2>
-            <p className="mt-2 text-gray-600">
-              Create your account to get started
-            </p>
+          <div className="w-16 h-16 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <FaPills className="text-white text-3xl" />
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <Card>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <Input
-                  label="Username"
-                  type="text"
-                  required
-                  value={formData.username}
-                  onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-                  icon={<FaUser />}
-                />
+        <Card className="shadow-xl border-0">
+          <CardHeader className="space-y-1 text-center">
+            <CardTitle className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Create Account
+            </CardTitle>
+            <CardDescription>
+              Sign up for your PharmaBot account
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="username" className="text-sm font-medium">
+                  Username
+                </Label>
+                <div className="relative">
+                  <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                  <Input
+                    id="username"
+                    type="text"
+                    required
+                    value={formData.username}
+                    onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+                    className="pl-10"
+                    placeholder="Choose a username"
+                  />
+                </div>
               </div>
 
-              <div>
-                <Input
-                  label="Password"
-                  type="password"
-                  required
-                  value={formData.password}
-                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                  icon={<FaLock />}
-                />
+              <div className="space-y-2">
+                <Label htmlFor="password" className="text-sm font-medium">
+                  Password
+                </Label>
+                <div className="relative">
+                  <FaLock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                  <Input
+                    id="password"
+                    type="password"
+                    required
+                    value={formData.password}
+                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                    className="pl-10"
+                    placeholder="Create a password"
+                  />
+                </div>
+
+                {/* Password Strength Indicators */}
                 {formData.password && (
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
-                    className="mt-3 space-y-2 p-3 bg-gray-50 rounded-lg"
+                    className="space-y-1 mt-2 text-xs"
                   >
-                    <p className="text-sm font-semibold text-gray-700 mb-2">Password must have:</p>
-                    <PasswordRequirement met={passwordStrength.hasLength} text="At least 8 characters" />
-                    <PasswordRequirement met={passwordStrength.hasNumber} text="One number" />
-                    <PasswordRequirement met={passwordStrength.hasUpper} text="One uppercase letter" />
-                    <PasswordRequirement met={passwordStrength.hasSpecial} text="One special character" />
+                    <div className={`flex items-center ${passwordStrength.length ? 'text-green-600' : 'text-gray-500'}`}>
+                      <FaCheckCircle className="mr-1" />
+                      At least 8 characters
+                    </div>
+                    <div className={`flex items-center ${passwordStrength.hasNumber ? 'text-green-600' : 'text-gray-500'}`}>
+                      <FaCheckCircle className="mr-1" />
+                      Contains a number
+                    </div>
+                    <div className={`flex items-center ${passwordStrength.hasUpper ? 'text-green-600' : 'text-gray-500'}`}>
+                      <FaCheckCircle className="mr-1" />
+                      Contains uppercase letter
+                    </div>
+                    <div className={`flex items-center ${passwordStrength.hasSpecial ? 'text-green-600' : 'text-gray-500'}`}>
+                      <FaCheckCircle className="mr-1" />
+                      Contains special character
+                    </div>
                   </motion.div>
                 )}
               </div>
 
-              <div>
-                <Input
-                  label="Confirm Password"
-                  type="password"
-                  required
-                  value={formData.confirmPassword}
-                  onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                  icon={<FaLock />}
-                  error={
-                    formData.confirmPassword && formData.password !== formData.confirmPassword
-                      ? 'Passwords do not match'
-                      : undefined
-                  }
-                />
+              <div className="space-y-2">
+                <Label htmlFor="confirmPassword" className="text-sm font-medium">
+                  Confirm Password
+                </Label>
+                <div className="relative">
+                  <FaLock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                  <Input
+                    id="confirmPassword"
+                    type="password"
+                    required
+                    value={formData.confirmPassword}
+                    onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                    className="pl-10"
+                    placeholder="Confirm your password"
+                  />
+                </div>
+                {formData.confirmPassword && !isPasswordMatch && (
+                  <p className="text-xs text-red-600">Passwords do not match</p>
+                )}
               </div>
 
               <Button
                 type="submit"
-                isLoading={loading}
-                className="w-full"
+                disabled={loading || !isPasswordMatch}
+                className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700"
                 size="lg"
               >
-                Create Account
+                {loading ? 'Creating Account...' : 'Sign Up'}
               </Button>
-            </form>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="mt-6 text-center"
-            >
-              <p className="text-gray-600">
+              <div className="text-center text-sm text-gray-600">
                 Already have an account?{' '}
-                <Link href="/login" className="font-semibold text-indigo-600 hover:text-indigo-500 transition-colors">
-                  Sign in instead
+                <Link href="/login" className="text-indigo-600 hover:text-indigo-700 font-semibold">
+                  Sign in
                 </Link>
-              </p>
-            </motion.div>
-          </Card>
-        </motion.div>
+              </div>
+            </form>
+          </CardContent>
+        </Card>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="mt-8 text-center text-sm text-gray-500"
+          transition={{ delay: 0.4 }}
+          className="text-center text-sm text-gray-600 mt-6"
         >
-          By creating an account, you agree to our Terms of Service and Privacy Policy
+          Your health data is encrypted and secure
         </motion.p>
-      </div>
+      </motion.div>
     </div>
   )
 }

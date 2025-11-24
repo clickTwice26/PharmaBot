@@ -1,8 +1,210 @@
 INFO:     Will watch for changes in these directories: ['/Users/shagato/Desktop/PharmaBot/pharmabot_tech/backend']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [12187] using WatchFiles
-INFO:     Started server process [12189]
+INFO:     Started reloader process [50981] using WatchFiles
+INFO:     Started server process [50985]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     127.0.0.1:52441 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58472 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62560 - "GET /health HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'app/routers/prescriptions.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [50985]
+INFO:     Started server process [53554]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/routers/prescriptions.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [53554]
+INFO:     Started server process [53584]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/schemas.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [53584]
+INFO:     Started server process [57620]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [57620]
+INFO:     Started server process [57632]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [57632]
+INFO:     Started server process [57636]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/routers/prescriptions.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [57636]
+INFO:     Started server process [57646]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'alembic/versions/6130bece6316_add_structured_data_to_prescriptions.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [57646]
+INFO:     Started server process [57843]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models.py', 'app/schemas.py', 'app/routers/prescriptions.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [57843]
+INFO:     Started server process [57853]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'alembic/versions/6130bece6316_add_structured_data_to_prescriptions.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [57853]
+INFO:     Started server process [57861]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'alembic/versions/6130bece6316_add_structured_data_to_prescriptions.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [57861]
+INFO:     Started server process [57991]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'alembic/versions/6130bece6316_add_structured_data_to_prescriptions.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [57991]
+INFO:     Started server process [58000]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:51552 - "OPTIONS /prescriptions/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51552 - "POST /prescriptions/analyze HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:51552 - "OPTIONS /auth/refresh HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51552 - "POST /auth/refresh HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'app/routers/prescriptions.py'. Reloading...
+INFO:     127.0.0.1:51552 - "POST /prescriptions/analyze HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [58000]
+INFO:     Started server process [58312]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/routers/prescriptions.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [58312]
+INFO:     Started server process [58320]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:52296 - "POST /prescriptions/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59071 - "OPTIONS /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59072 - "OPTIONS /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59071 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59071 - "OPTIONS /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59072 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59071 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59072 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59214 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59214 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59216 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59214 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59257 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59259 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60629 - "OPTIONS /prescriptions/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60630 - "OPTIONS /prescriptions/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60629 - "GET /prescriptions/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60630 - "GET /prescriptions/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60645 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60647 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60645 - "GET /prescriptions/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60647 - "GET /prescriptions/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60647 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60645 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60645 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60647 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60693 - "GET /prescriptions/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60693 - "GET /prescriptions/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60789 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60791 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60830 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60832 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60832 - "GET /prescriptions/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60830 - "GET /prescriptions/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60854 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60856 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61667 - "GET /prescriptions/history HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61667 - "GET /prescriptions/history HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61667 - "OPTIONS /auth/refresh HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61667 - "OPTIONS /auth/refresh HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61669 - "POST /auth/refresh HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61669 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61667 - "POST /auth/refresh HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61669 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61669 - "GET /prescriptions/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61667 - "GET /prescriptions/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61692 - "GET /prescriptions/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61692 - "GET /prescriptions/2 HTTP/1.1" 404 Not Found
+WARNING:  WatchFiles detected changes in 'app/routers/prescriptions.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [58320]
+INFO:     Started server process [60873]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/routers/prescriptions.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [60873]
+INFO:     Started server process [60904]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:62600 - "GET /prescriptions/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62602 - "GET /prescriptions/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62655 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62657 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62678 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62680 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62678 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62680 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62680 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62678 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62678 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62678 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62678 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62680 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62718 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62718 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62718 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62720 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62720 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62718 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62718 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62720 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62718 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62718 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62764 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62764 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62764 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62766 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62766 - "GET /prescriptions/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62764 - "GET /prescriptions/history HTTP/1.1" 200 OK
