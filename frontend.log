@@ -2616,3 +2616,269 @@ Import trace for requested module:
  ○ Compiling /not-found ...
  ✓ Compiled /not-found in 589ms (1616 modules)
  ✓ Compiled in 540ms (1630 modules)
+ ✓ Compiled /dashboard/profile in 215ms (813 modules)
+ ✓ Compiled in 442ms (1646 modules)
+ ✓ Compiled in 486ms (1646 modules)
+ ✓ Compiled in 382ms (1646 modules)
+ ✓ Compiled in 382ms (1646 modules)
+ ✓ Compiled in 404ms (1646 modules)
+ ✓ Compiled in 635ms (1646 modules)
+ ✓ Compiled in 632ms (1646 modules)
+ ✓ Compiled in 299ms (1646 modules)
+ ⨯ ./src/app/dashboard/scan/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+     ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/scan/page.tsx[0m:97:1]
+ [2m 97[0m |   }
+ [2m 98[0m | 
+ [2m 99[0m |   return (
+ [2m100[0m |     <AppLayout>
+     : [31;1m     ^^^^^^^^^[0m
+ [2m101[0m |       <Toaster position="top-center" />
+ [2m102[0m |       
+ [2m103[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/scan/page.tsx
+ ⨯ ./src/app/dashboard/scan/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+     ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/scan/page.tsx[0m:97:1]
+ [2m 97[0m |   }
+ [2m 98[0m | 
+ [2m 99[0m |   return (
+ [2m100[0m |     <AppLayout>
+     : [31;1m     ^^^^^^^^^[0m
+ [2m101[0m |       <Toaster position="top-center" />
+ [2m102[0m |       
+ [2m103[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/scan/page.tsx
+ ○ Compiling /not-found ...
+ ⨯ ./src/app/dashboard/scan/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+     ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/scan/page.tsx[0m:97:1]
+ [2m 97[0m |   }
+ [2m 98[0m | 
+ [2m 99[0m |   return (
+ [2m100[0m |     <AppLayout>
+     : [31;1m     ^^^^^^^^^[0m
+ [2m101[0m |       <Toaster position="top-center" />
+ [2m102[0m |       
+ [2m103[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/scan/page.tsx
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ ./src/app/dashboard/scan/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+     ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/scan/page.tsx[0m:97:1]
+ [2m 97[0m |   }
+ [2m 98[0m | 
+ [2m 99[0m |   return (
+ [2m100[0m |     <AppLayout>
+     : [31;1m     ^^^^^^^^^[0m
+ [2m101[0m |       <Toaster position="top-center" />
+ [2m102[0m |       
+ [2m103[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/scan/page.tsx
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ ./src/app/dashboard/scan/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+     ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/scan/page.tsx[0m:97:1]
+ [2m 97[0m |   }
+ [2m 98[0m | 
+ [2m 99[0m |   return (
+ [2m100[0m |     <AppLayout>
+     : [31;1m     ^^^^^^^^^[0m
+ [2m101[0m |       <Toaster position="top-center" />
+ [2m102[0m |       
+ [2m103[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/scan/page.tsx
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ ./src/app/dashboard/scan/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+     ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/scan/page.tsx[0m:97:1]
+ [2m 97[0m |   }
+ [2m 98[0m | 
+ [2m 99[0m |   return (
+ [2m100[0m |     <AppLayout>
+     : [31;1m     ^^^^^^^^^[0m
+ [2m101[0m |       <Toaster position="top-center" />
+ [2m102[0m |       
+ [2m103[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/scan/page.tsx
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ ./src/app/dashboard/scan/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+     ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/scan/page.tsx[0m:97:1]
+ [2m 97[0m |   }
+ [2m 98[0m | 
+ [2m 99[0m |   return (
+ [2m100[0m |     <AppLayout>
+     : [31;1m     ^^^^^^^^^[0m
+ [2m101[0m |       <Toaster position="top-center" />
+ [2m102[0m |       
+ [2m103[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/scan/page.tsx
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ ./src/app/dashboard/scan/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+     ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/scan/page.tsx[0m:97:1]
+ [2m 97[0m |   }
+ [2m 98[0m | 
+ [2m 99[0m |   return (
+ [2m100[0m |     <AppLayout>
+     : [31;1m     ^^^^^^^^^[0m
+ [2m101[0m |       <Toaster position="top-center" />
+ [2m102[0m |       
+ [2m103[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/scan/page.tsx
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ✓ Compiled /not-found in 795ms (1632 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 696ms (1641 modules)
+ ✓ Compiled /not-found in 280ms (1632 modules)
+ ✓ Compiled in 604ms (1646 modules)
+ ✓ Compiled in 378ms (1646 modules)
+ ⨯ ./src/app/dashboard/prescription/[id]/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+    ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/prescription/[id]/page.tsx[0m:80:1]
+ [2m80[0m |   }
+ [2m81[0m | 
+ [2m82[0m |   return (
+ [2m83[0m |     <AppLayout>
+    : [31;1m     ^^^^^^^^^[0m
+ [2m84[0m |       <Toaster position="top-center" />
+ [2m85[0m |       
+ [2m86[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/prescription/[id]/page.tsx
+ ⨯ ./src/app/dashboard/prescription/[id]/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+    ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/prescription/[id]/page.tsx[0m:80:1]
+ [2m80[0m |   }
+ [2m81[0m | 
+ [2m82[0m |   return (
+ [2m83[0m |     <AppLayout>
+    : [31;1m     ^^^^^^^^^[0m
+ [2m84[0m |       <Toaster position="top-center" />
+ [2m85[0m |       
+ [2m86[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/prescription/[id]/page.tsx
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ ./src/app/dashboard/prescription/[id]/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+    ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/prescription/[id]/page.tsx[0m:80:1]
+ [2m80[0m |   }
+ [2m81[0m | 
+ [2m82[0m |   return (
+ [2m83[0m |     <AppLayout>
+    : [31;1m     ^^^^^^^^^[0m
+ [2m84[0m |       <Toaster position="top-center" />
+ [2m85[0m |       
+ [2m86[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/prescription/[id]/page.tsx
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ ./src/app/dashboard/prescription/[id]/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+    ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/prescription/[id]/page.tsx[0m:80:1]
+ [2m80[0m |   }
+ [2m81[0m | 
+ [2m82[0m |   return (
+ [2m83[0m |     <AppLayout>
+    : [31;1m     ^^^^^^^^^[0m
+ [2m84[0m |       <Toaster position="top-center" />
+ [2m85[0m |       
+ [2m86[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/prescription/[id]/page.tsx
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ✓ Compiled in 478ms (1632 modules)
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ✓ Compiled in 472ms (1646 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 839ms (1641 modules)
+ ✓ Compiled /not-found in 202ms (1632 modules)
+ ✓ Compiled in 429ms (1646 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 328ms (1646 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 893ms (1646 modules)
+ ✓ Compiled in 406ms (1646 modules)
