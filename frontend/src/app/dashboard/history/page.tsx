@@ -52,11 +52,11 @@ export default function HistoryPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h2 className="text-2xl font-bold text-gray-900 mb-2 flex items-center">
-            <FaHistory className="mr-3 text-blue-600" />
+          <h2 className="text-2xl font-bold text-white mb-2 flex items-center">
+            <FaHistory className="mr-3 text-blue-400" />
             Prescription History
           </h2>
-          <p className="text-gray-600">
+          <p className="text-zinc-400">
             View all your analyzed prescriptions
           </p>
         </motion.div>
@@ -69,18 +69,18 @@ export default function HistoryPage() {
           className="space-y-4"
         >
           {loading ? (
-            <Card>
+            <Card className="bg-zinc-900/50 border-zinc-800">
               <CardContent className="p-12 text-center">
-                <p className="text-gray-500">Loading history...</p>
+                <p className="text-zinc-400">Loading history...</p>
               </CardContent>
             </Card>
           ) : prescriptions.length === 0 ? (
-            <Card>
+            <Card className="bg-zinc-900/50 border-zinc-800">
               <CardContent className="p-12 text-center">
-                <FaHistory className="mx-auto text-6xl text-gray-300 mb-4" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">No Prescriptions Yet</h3>
-                <p className="text-gray-500 mb-4">Start by scanning your first prescription</p>
-                <Button onClick={() => router.push('/dashboard/scan')}>
+                <FaHistory className="mx-auto text-6xl text-zinc-700 mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">No Prescriptions Yet</h3>
+                <p className="text-zinc-400 mb-4">Start by scanning your first prescription</p>
+                <Button onClick={() => router.push('/dashboard/scan')} className="bg-gradient-to-r from-indigo-600 to-purple-600">
                   Scan Prescription
                 </Button>
               </CardContent>
@@ -93,17 +93,17 @@ export default function HistoryPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.05 }}
               >
-                <Card className="hover:shadow-md transition-shadow cursor-pointer">
+                <Card className="hover:border-zinc-700 transition-all cursor-pointer bg-zinc-900/50 border-zinc-800">
                   <CardContent className="p-4">
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <div className="flex items-center space-x-3 mb-3">
-                          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg">
                             <FaPills className="text-white text-xl" />
                           </div>
                           <div>
-                            <h3 className="font-semibold text-gray-900">{prescription.filename}</h3>
-                            <p className="text-sm text-gray-500 flex items-center">
+                            <h3 className="font-semibold text-white">{prescription.filename}</h3>
+                            <p className="text-sm text-zinc-400 flex items-center">
                               <FaClock className="mr-1" />
                               {formatDate(prescription.created_at)}
                             </p>
@@ -112,17 +112,17 @@ export default function HistoryPage() {
 
                         {prescription.structured_data && prescription.structured_data.medications && (
                           <div className="space-y-2">
-                            <p className="text-sm font-semibold text-gray-700">
+                            <p className="text-sm font-semibold text-zinc-300">
                               Medications ({prescription.structured_data.medications.length}):
                             </p>
                             <div className="flex flex-wrap gap-2">
                               {prescription.structured_data.medications.slice(0, 3).map((med: any, idx: number) => (
-                                <Badge key={idx} variant="secondary" className="bg-purple-100 text-purple-700">
+                                <Badge key={idx} variant="secondary" className="bg-purple-900/30 text-purple-300 border-purple-800">
                                   {med.medicine_name}
                                 </Badge>
                               ))}
                               {prescription.structured_data.medications.length > 3 && (
-                                <Badge variant="secondary" className="bg-gray-100 text-gray-700">
+                                <Badge variant="secondary" className="bg-zinc-800 text-zinc-300 border-zinc-700">
                                   +{prescription.structured_data.medications.length - 3} more
                                 </Badge>
                               )}

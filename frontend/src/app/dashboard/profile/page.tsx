@@ -36,31 +36,6 @@ export default function ProfilePage() {
     setTimeout(() => router.push('/login'), 500)
   }
 
-  const settingsOptions = [
-    {
-      icon: FaBell,
-      title: 'Notifications',
-      description: 'Manage notification preferences',
-      badge: 'New'
-    },
-    {
-      icon: FaShieldAlt,
-      title: 'Privacy & Security',
-      description: 'Control your data and security settings'
-    },
-    {
-      icon: FaPalette,
-      title: 'Appearance',
-      description: 'Customize theme and display'
-    },
-    {
-      icon: FaLanguage,
-      title: 'Language',
-      description: 'Change app language',
-      value: 'English'
-    }
-  ]
-
   return (
     <AppLayout>
       <Toaster position="top-center" />
@@ -71,62 +46,44 @@ export default function ProfilePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <Card className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white border-0">
+          <Card className="bg-gradient-to-br from-indigo-600 to-purple-600 border-0 shadow-xl shadow-indigo-900/20">
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <Avatar className="h-20 w-20 ring-4 ring-white/30">
+                <Avatar className="h-20 w-20 ring-4 ring-white/20">
                   <AvatarImage src="/avatar-placeholder.png" />
                   <AvatarFallback className="bg-white text-indigo-600 text-2xl font-bold">
                     {user?.username?.charAt(0).toUpperCase() || 'U'}
                   </AvatarFallback>
                 </Avatar>
                 <div className="flex-1">
-                  <h2 className="text-2xl font-bold mb-1">{user?.username || 'User'}</h2>
-                  <p className="text-indigo-100">PharmaBot Member</p>
-                  <Badge className="mt-2 bg-white/20 text-white border-white/30">
-                    Active
-                  </Badge>
+                  <h2 className="text-2xl font-bold mb-1 text-white">{user?.username || 'User'}</h2>
+                  <p className="text-indigo-100 text-sm">PharmaBot Member</p>
                 </div>
               </div>
             </CardContent>
           </Card>
         </motion.div>
 
-        {/* Account Settings */}
+        {/* Account Info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          <h3 className="text-lg font-bold text-gray-900 mb-3">Settings</h3>
-          <Card>
-            <CardContent className="p-0">
-              {settingsOptions.map((option, index) => (
-                <div key={option.title}>
-                  <button className="w-full p-4 text-left hover:bg-gray-50 transition-colors flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
-                        <option.icon className="text-gray-600" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-gray-900 flex items-center">
-                          {option.title}
-                          {option.badge && (
-                            <Badge className="ml-2 bg-indigo-100 text-indigo-700 text-xs">
-                              {option.badge}
-                            </Badge>
-                          )}
-                        </p>
-                        <p className="text-sm text-gray-500">{option.description}</p>
-                      </div>
-                    </div>
-                    {option.value && (
-                      <span className="text-sm text-gray-500">{option.value}</span>
-                    )}
-                  </button>
-                  {index < settingsOptions.length - 1 && <Separator />}
+          <h3 className="text-lg font-bold text-white mb-3">Account</h3>
+          <Card className="bg-zinc-900/50 border-zinc-800">
+            <CardContent className="p-4">
+              <div className="space-y-4">
+                <div>
+                  <p className="text-sm text-zinc-400 mb-1">Username</p>
+                  <p className="font-semibold text-white">{user?.username || 'Loading...'}</p>
                 </div>
-              ))}
+                <Separator className="bg-zinc-800" />
+                <div>
+                  <p className="text-sm text-zinc-400 mb-1">Member Since</p>
+                  <p className="font-semibold text-white">November 2025</p>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </motion.div>
@@ -137,23 +94,12 @@ export default function ProfilePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <h3 className="text-lg font-bold text-gray-900 mb-3">About</h3>
-          <Card>
-            <CardContent className="p-4 space-y-3">
-              <button className="w-full p-3 text-left hover:bg-gray-50 rounded-lg transition-colors">
-                <p className="font-semibold text-gray-900">Help & Support</p>
-                <p className="text-sm text-gray-500">Get help or contact us</p>
-              </button>
-              <button className="w-full p-3 text-left hover:bg-gray-50 rounded-lg transition-colors">
-                <p className="font-semibold text-gray-900">Terms of Service</p>
-                <p className="text-sm text-gray-500">Read our terms and conditions</p>
-              </button>
-              <button className="w-full p-3 text-left hover:bg-gray-50 rounded-lg transition-colors">
-                <p className="font-semibold text-gray-900">Privacy Policy</p>
-                <p className="text-sm text-gray-500">How we handle your data</p>
-              </button>
-              <div className="p-3">
-                <p className="text-sm text-gray-500">Version 1.0.0</p>
+          <h3 className="text-lg font-bold text-white mb-3">About</h3>
+          <Card className="bg-zinc-900/50 border-zinc-800">
+            <CardContent className="p-4">
+              <div className="space-y-1">
+                <p className="text-sm text-zinc-400">Version</p>
+                <p className="font-semibold text-white">1.0.0</p>
               </div>
             </CardContent>
           </Card>
@@ -168,7 +114,7 @@ export default function ProfilePage() {
           <Button
             onClick={handleLogout}
             variant="outline"
-            className="w-full border-red-200 text-red-600 hover:bg-red-50 hover:text-red-700"
+            className="w-full border-red-900/50 text-red-400 hover:bg-red-950/30 hover:border-red-800"
             size="lg"
           >
             <FaSignOutAlt className="mr-2" />

@@ -62,20 +62,6 @@ export default function DashboardPage() {
       description: 'Past prescriptions',
       color: 'from-blue-500 to-cyan-500',
       path: '/dashboard/history'
-    },
-    {
-      icon: FaPills,
-      label: 'Medications',
-      description: 'Active medicines',
-      color: 'from-green-500 to-emerald-500',
-      path: '/dashboard/medications'
-    },
-    {
-      icon: FaChartLine,
-      label: 'Analytics',
-      description: 'Health insights',
-      color: 'from-orange-500 to-red-500',
-      path: '/dashboard/analytics'
     }
   ]
 
@@ -94,11 +80,11 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
+          <h2 className="text-2xl font-bold text-white mb-2">
             Welcome back, {user?.username || 'User'}! 👋
           </h2>
-          <p className="text-gray-600">
-            Here's your health overview for today
+          <p className="text-zinc-400">
+            Manage your prescriptions with AI-powered analysis
           </p>
         </motion.div>
 
@@ -107,30 +93,22 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="grid grid-cols-3 gap-3"
+          className="grid grid-cols-2 gap-4"
         >
-          <Card className="bg-gradient-to-br from-indigo-50 to-purple-50 border-indigo-200">
+          <Card className="bg-zinc-900/50 border-zinc-800">
             <CardContent className="p-4 text-center">
-              <div className="text-3xl font-bold text-indigo-600 mb-1">
+              <div className="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-1">
                 {stats.totalPrescriptions}
               </div>
-              <div className="text-xs text-gray-600">Prescriptions</div>
+              <div className="text-xs text-zinc-400">Total Scanned</div>
             </CardContent>
           </Card>
-          <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200">
+          <Card className="bg-zinc-900/50 border-zinc-800">
             <CardContent className="p-4 text-center">
-              <div className="text-3xl font-bold text-green-600 mb-1">
-                {stats.activeMedications}
-              </div>
-              <div className="text-xs text-gray-600">Active Meds</div>
-            </CardContent>
-          </Card>
-          <Card className="bg-gradient-to-br from-orange-50 to-red-50 border-orange-200">
-            <CardContent className="p-4 text-center">
-              <div className="text-3xl font-bold text-orange-600 mb-1">
+              <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">
                 {stats.upcomingDoses}
               </div>
-              <div className="text-xs text-gray-600">Upcoming</div>
+              <div className="text-xs text-zinc-400">Active Meds</div>
             </CardContent>
           </Card>
         </motion.div>
@@ -141,8 +119,8 @@ export default function DashboardPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <h3 className="text-lg font-bold text-gray-900 mb-3">Quick Actions</h3>
-          <div className="grid grid-cols-2 gap-3">
+          <h3 className="text-lg font-bold text-white mb-3">Quick Actions</h3>
+          <div className="grid grid-cols-2 gap-4">
             {quickActions.map((action, index) => (
               <motion.div
                 key={action.label}
@@ -153,15 +131,15 @@ export default function DashboardPage() {
                 whileTap={{ scale: 0.98 }}
               >
                 <Card 
-                  className="cursor-pointer hover:shadow-lg transition-all"
+                  className="cursor-pointer hover:bg-zinc-800/50 transition-all bg-zinc-900/50 border-zinc-800"
                   onClick={() => router.push(action.path)}
                 >
-                  <CardContent className="p-4">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${action.color} rounded-xl flex items-center justify-center mb-3`}>
-                      <action.icon className="text-white text-xl" />
+                  <CardContent className="p-6">
+                    <div className={`w-14 h-14 bg-gradient-to-br ${action.color} rounded-xl flex items-center justify-center mb-3 shadow-lg`}>
+                      <action.icon className="text-white text-2xl" />
                     </div>
-                    <h4 className="font-semibold text-gray-900 mb-1">{action.label}</h4>
-                    <p className="text-xs text-gray-500">{action.description}</p>
+                    <h4 className="font-semibold text-white mb-1">{action.label}</h4>
+                    <p className="text-xs text-zinc-400">{action.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -169,67 +147,22 @@ export default function DashboardPage() {
           </div>
         </motion.div>
 
-        {/* Upcoming Medications */}
+        {/* Info Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.3 }}
         >
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center text-lg">
-                <FaClock className="mr-2 text-orange-500" />
-                Upcoming Medications
-              </CardTitle>
-              <CardDescription>Don't miss your doses today</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              {upcomingMedications.length > 0 ? (
-                upcomingMedications.map((med, index) => (
-                  <div key={index}>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                          <FaPills className="text-purple-600" />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-900">{med.name}</p>
-                          <p className="text-sm text-gray-500">{med.time}</p>
-                        </div>
-                      </div>
-                      <Badge variant="secondary" className="bg-orange-100 text-orange-700">
-                        Pending
-                      </Badge>
-                    </div>
-                    {index < upcomingMedications.length - 1 && <Separator className="mt-3" />}
-                  </div>
-                ))
-              ) : (
-                <div className="text-center py-4 text-gray-500">
-                  <FaCheckCircle className="mx-auto text-4xl text-green-500 mb-2" />
-                  <p>All caught up! No upcoming doses.</p>
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* Health Tips */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-        >
-          <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
+          <Card className="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border-indigo-800/50">
             <CardContent className="p-4">
               <div className="flex items-start space-x-3">
-                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
                   <FaExclamationTriangle className="text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Health Tip</h4>
-                  <p className="text-sm text-gray-700">
-                    Remember to take your medications with water and follow the prescribed timing for best results.
+                  <h4 className="font-semibold text-white mb-1">AI-Powered Analysis</h4>
+                  <p className="text-sm text-zinc-400">
+                    Upload prescription images for instant AI analysis and structured medication data extraction.
                   </p>
                 </div>
               </div>

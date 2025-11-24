@@ -100,11 +100,11 @@ export default function ScanPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h2 className="text-2xl font-bold text-gray-900 mb-2 flex items-center">
-            <FaCamera className="mr-3 text-indigo-600" />
+          <h2 className="text-2xl font-bold text-white mb-2 flex items-center">
+            <FaCamera className="mr-3 text-indigo-400" />
             Scan Prescription
           </h2>
-          <p className="text-gray-600">
+          <p className="text-zinc-400">
             Upload a prescription image for AI analysis
           </p>
         </motion.div>
@@ -140,15 +140,15 @@ export default function ScanPage() {
                   onDragLeave={handleDragLeave}
                   className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-all ${
                     isDragging
-                      ? 'border-indigo-600 bg-indigo-50'
-                      : 'border-gray-300 hover:border-indigo-400 hover:bg-gray-50'
+                      ? 'border-indigo-500 bg-indigo-950/30'
+                      : 'border-zinc-700 hover:border-indigo-600 hover:bg-zinc-800/50'
                   }`}
                 >
-                  <FaCamera className="mx-auto h-12 w-12 text-gray-400 mb-4" />
-                  <p className="text-sm font-semibold text-gray-700 mb-1">
+                  <FaCamera className="mx-auto h-12 w-12 text-zinc-500 mb-4" />
+                  <p className="text-sm font-semibold text-zinc-300 mb-1">
                     Click to upload or drag and drop
                   </p>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-zinc-500">
                     PNG, JPG, JPEG up to 10MB
                   </p>
                 </div>
@@ -230,8 +230,8 @@ export default function ScanPage() {
                       >
                         <FaSpinner className="w-16 h-16 text-indigo-600" />
                       </motion.div>
-                      <p className="text-lg font-semibold text-gray-700">Analyzing prescription...</p>
-                      <p className="text-sm text-gray-500">This may take a few seconds</p>
+                      <p className="text-lg font-semibold text-white">Analyzing prescription...</p>
+                      <p className="text-sm text-zinc-400">This may take a few seconds</p>
                     </motion.div>
                   ) : result ? (
                     <motion.div
@@ -241,11 +241,11 @@ export default function ScanPage() {
                       exit={{ opacity: 0, y: -20 }}
                       className="space-y-4"
                     >
-                      <div className="flex items-start space-x-3 p-4 bg-green-50 border border-green-200 rounded-lg mb-4">
-                        <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
+                      <div className="flex items-start space-x-3 p-4 bg-green-950/30 border border-green-900/50 rounded-lg mb-4">
+                        <FaCheckCircle className="text-green-400 mt-1 flex-shrink-0" size={20} />
                         <div>
-                          <h4 className="font-semibold text-green-900">Analysis Complete</h4>
-                          <p className="text-sm text-green-700 mt-1">Successfully analyzed prescription</p>
+                          <h4 className="font-semibold text-green-400">Analysis Complete</h4>
+                          <p className="text-sm text-green-300/70 mt-1">Successfully analyzed prescription</p>
                         </div>
                       </div>
 
@@ -253,19 +253,19 @@ export default function ScanPage() {
                         <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
                           {/* Patient Information */}
                           {result.structured_data.patient_details && (
-                            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-4 rounded-lg border border-indigo-200">
-                              <h4 className="text-sm font-bold mb-3 flex items-center text-gray-900">
-                                <FaUser className="mr-2 text-indigo-600" />
+                            <div className="bg-gradient-to-br from-indigo-950/30 to-purple-950/30 p-4 rounded-lg border border-indigo-900/50">
+                              <h4 className="text-sm font-bold mb-3 flex items-center text-white">
+                                <FaUser className="mr-2 text-indigo-400" />
                                 Patient Information
                               </h4>
                               <div className="grid grid-cols-2 gap-3">
                                 <div>
-                                  <p className="text-xs text-gray-600 mb-1">Name</p>
-                                  <p className="font-semibold text-gray-900">{result.structured_data.patient_details.patient_name || 'N/A'}</p>
+                                  <p className="text-xs text-zinc-400 mb-1">Name</p>
+                                  <p className="font-semibold text-white">{result.structured_data.patient_details.patient_name || 'N/A'}</p>
                                 </div>
                                 <div>
-                                  <p className="text-xs text-gray-600 mb-1">Age</p>
-                                  <p className="font-semibold text-gray-900">{result.structured_data.patient_details.patient_age || 'N/A'}</p>
+                                  <p className="text-xs text-zinc-400 mb-1">Age</p>
+                                  <p className="font-semibold text-white">{result.structured_data.patient_details.patient_age || 'N/A'}</p>
                                 </div>
                               </div>
                             </div>
@@ -277,16 +277,16 @@ export default function ScanPage() {
                               {result.structured_data.medications.map((med: any, index: number) => (
                                 <div
                                   key={index}
-                                  className="bg-white border border-gray-200 rounded-lg p-4"
+                                  className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4"
                                 >
                                   <div className="flex items-start justify-between mb-3">
                                     <div>
-                                      <h5 className="font-bold text-gray-900 flex items-center">
-                                        <FaPills className="mr-2 text-purple-500" size={16} />
+                                      <h5 className="font-bold text-white flex items-center">
+                                        <FaPills className="mr-2 text-purple-400" size={16} />
                                         {med.medicine_name}
                                       </h5>
                                       {med.generic_name && (
-                                        <p className="text-xs text-gray-600 mt-1">({med.generic_name})</p>
+                                        <p className="text-xs text-zinc-400 mt-1">({med.generic_name})</p>
                                       )}
                                     </div>
                                     {med.frequency_code && (
@@ -301,14 +301,14 @@ export default function ScanPage() {
                                   </div>
 
                                   {med.timing && med.timing.length > 0 && (
-                                    <div className="bg-blue-50 p-3 rounded-lg">
-                                      <p className="text-xs font-semibold text-blue-900 mb-2 flex items-center">
+                                    <div className="bg-blue-950/30 border border-blue-900/50 p-3 rounded-lg">
+                                      <p className="text-xs font-semibold text-blue-300 mb-2 flex items-center">
                                         <FaClock className="mr-1" />
                                         Timing
                                       </p>
                                       <div className="flex flex-wrap gap-2">
                                         {med.timing.map((time: string, idx: number) => (
-                                          <span key={idx} className="px-2 py-1 bg-white border border-blue-200 rounded text-xs font-mono text-blue-900">
+                                          <span key={idx} className="px-2 py-1 bg-blue-900/30 border border-blue-800 rounded text-xs font-mono text-blue-300">
                                             {time}
                                           </span>
                                         ))}
@@ -321,8 +321,8 @@ export default function ScanPage() {
                           )}
                         </div>
                       ) : (
-                        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                          <pre className="whitespace-pre-wrap text-sm text-gray-700 font-sans overflow-x-auto">
+                        <div className="bg-zinc-800/50 p-4 rounded-lg border border-zinc-700">
+                          <pre className="whitespace-pre-wrap text-sm text-zinc-300 font-sans overflow-x-auto">
                             {result.analysis}
                           </pre>
                         </div>
@@ -345,11 +345,11 @@ export default function ScanPage() {
                       exit={{ opacity: 0 }}
                       className="flex flex-col items-center justify-center h-64 text-center"
                     >
-                      <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-4">
-                        <FaRobot className="w-10 h-10 text-gray-400" />
+                      <div className="w-20 h-20 bg-zinc-800 rounded-full flex items-center justify-center mb-4">
+                        <FaRobot className="w-10 h-10 text-zinc-500" />
                       </div>
-                      <p className="text-lg font-semibold text-gray-700 mb-1">No analysis yet</p>
-                      <p className="text-sm text-gray-500">Upload a prescription to get started</p>
+                      <p className="text-lg font-semibold text-white mb-1">No analysis yet</p>
+                      <p className="text-sm text-zinc-400">Upload a prescription to get started</p>
                     </motion.div>
                   )}
                 </AnimatePresence>

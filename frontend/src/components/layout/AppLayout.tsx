@@ -1,14 +1,11 @@
 'use client'
 
-import { ReactNode, useState } from 'react'
+import { ReactNode } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
-  FaHome, FaCamera, FaHistory, FaUser, FaPills,
-  FaBell, FaSearch
+  FaHome, FaCamera, FaHistory, FaUser, FaPills
 } from 'react-icons/fa'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Badge } from '@/components/ui/badge'
 
 interface AppLayoutProps {
   children: ReactNode
@@ -23,7 +20,6 @@ export default function AppLayout({
 }: AppLayoutProps) {
   const pathname = usePathname()
   const router = useRouter()
-  const [notificationCount] = useState(3)
 
   const navItems = [
     { icon: FaHome, label: 'Home', path: '/dashboard' },
@@ -35,42 +31,23 @@ export default function AppLayout({
   const isActive = (path: string) => pathname === path
 
   return (
-    <div className="h-screen flex flex-col bg-gradient-to-b from-indigo-50 via-white to-purple-50">
+    <div className="h-screen flex flex-col bg-zinc-950">
       {/* Top App Bar */}
       {showTopBar && (
         <motion.header
           initial={{ y: -100 }}
           animate={{ y: 0 }}
-          className="sticky top-0 z-40 bg-white/80 backdrop-blur-lg border-b border-gray-200 shadow-sm"
+          className="sticky top-0 z-40 bg-zinc-900/95 backdrop-blur-lg border-b border-zinc-800"
         >
           <div className="flex items-center justify-between px-4 py-3">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/20">
                 <FaPills className="text-white text-xl" />
               </div>
               <div>
-                <h1 className="text-lg font-bold text-gray-900">PharmaBot</h1>
-                <p className="text-xs text-gray-500">Your Health Assistant</p>
+                <h1 className="text-lg font-bold text-white">PharmaBot</h1>
+                <p className="text-xs text-zinc-400">AI Prescription Analysis</p>
               </div>
-            </div>
-            <div className="flex items-center space-x-3">
-              <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
-                <FaSearch className="text-gray-600 text-lg" />
-              </button>
-              <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
-                <FaBell className="text-gray-600 text-lg" />
-                {notificationCount > 0 && (
-                  <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs bg-red-500">
-                    {notificationCount}
-                  </Badge>
-                )}
-              </button>
-              <Avatar className="h-9 w-9 cursor-pointer ring-2 ring-indigo-100">
-                <AvatarImage src="/avatar-placeholder.png" />
-                <AvatarFallback className="bg-gradient-to-br from-indigo-500 to-purple-500 text-white font-semibold">
-                  PB
-                </AvatarFallback>
-              </Avatar>
             </div>
           </div>
         </motion.header>
@@ -96,9 +73,9 @@ export default function AppLayout({
         <motion.nav
           initial={{ y: 100 }}
           animate={{ y: 0 }}
-          className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-lg"
+          className="fixed bottom-0 left-0 right-0 z-40 bg-zinc-900/95 backdrop-blur-lg border-t border-zinc-800"
         >
-          <div className="flex items-center justify-around px-2 py-2 safe-area-inset-bottom">
+          <div className="flex items-center justify-around px-2 py-2">
             {navItems.map((item) => {
               const active = isActive(item.path)
               return (
@@ -109,14 +86,14 @@ export default function AppLayout({
                 >
                   <motion.div
                     whileTap={{ scale: 0.9 }}
-                    className={`relative flex flex-col items-center ${
-                      active ? 'text-indigo-600' : 'text-gray-500'
+                    className={`relative flex flex-col items-center transition-colors ${
+                      active ? 'text-indigo-400' : 'text-zinc-500 hover:text-zinc-300'
                     }`}
                   >
                     {active && (
                       <motion.div
                         layoutId="activeTab"
-                        className="absolute -top-1 left-1/2 -translate-x-1/2 w-12 h-1 bg-indigo-600 rounded-full"
+                        className="absolute -top-1 left-1/2 -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full shadow-lg shadow-indigo-500/50"
                         transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                       />
                     )}
@@ -125,7 +102,7 @@ export default function AppLayout({
                         active ? 'scale-110' : 'scale-100'
                       }`} 
                     />
-                    <span className={`text-xs font-medium ${
+                    <span className={`text-xs transition-all ${
                       active ? 'font-semibold' : 'font-normal'
                     }`}>
                       {item.label}
