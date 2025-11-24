@@ -85,10 +85,7 @@ export default function PrescriptionDetailPage() {
       
       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
+        <div>
           <Button
             variant="ghost"
             onClick={() => router.push('/dashboard/history')}
@@ -113,16 +110,13 @@ export default function PrescriptionDetailPage() {
               Export
             </Button>
           </div>
-        </motion.div>
+        </div>
 
         {prescription.structured_data ? (
           <div className="space-y-6">
             {/* Patient Information */}
             {prescription.structured_data.patient_details && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
+              <div
               >
                 <Card>
                   <CardHeader>
@@ -162,15 +156,12 @@ export default function PrescriptionDetailPage() {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             )}
 
             {/* Medications */}
             {prescription.structured_data.medications && prescription.structured_data.medications.length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
+              <div
               >
                 <Card>
                   <CardHeader>
@@ -182,11 +173,8 @@ export default function PrescriptionDetailPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     {prescription.structured_data.medications.map((med: any, index: number) => (
-                      <motion.div
+                      <div
                         key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.3 + index * 0.1 }}
                         className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-lg p-4"
                       >
                         <div className="flex items-start justify-between mb-4">
@@ -282,18 +270,15 @@ export default function PrescriptionDetailPage() {
                             <p className="text-sm text-yellow-800">{med.special_instructions}</p>
                           </div>
                         )}
-                      </motion.div>
+                      </div>
                     ))}
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             )}
 
             {/* Additional Information */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+            <div
               className="grid grid-cols-1 md:grid-cols-2 gap-4"
             >
               {prescription.structured_data.diagnosis && (
@@ -326,13 +311,10 @@ export default function PrescriptionDetailPage() {
                   </CardContent>
                 </Card>
               )}
-            </motion.div>
+            </div>
 
             {prescription.structured_data.warnings && prescription.structured_data.warnings.length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
+              <div
               >
                 <Card className="border-orange-200">
                   <CardHeader>
@@ -352,14 +334,11 @@ export default function PrescriptionDetailPage() {
                     </ul>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             )}
           </div>
         ) : (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+          <div
           >
             <Card>
               <CardHeader>
@@ -372,7 +351,7 @@ export default function PrescriptionDetailPage() {
                 </pre>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
         )}
       </div>
     </AppLayout>

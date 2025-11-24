@@ -31,26 +31,22 @@ export default function AppLayout({
   const isActive = (path: string) => pathname === path
 
   return (
-    <div className="h-screen flex flex-col bg-zinc-950">
+    <div className="h-screen flex flex-col bg-gray-50">
       {/* Top App Bar */}
       {showTopBar && (
-        <motion.header
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          className="sticky top-0 z-40 bg-zinc-900/95 backdrop-blur-lg border-b border-zinc-800"
-        >
+        <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-sm">
           <div className="flex items-center justify-between px-4 py-3">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/20">
+              <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center shadow-md">
                 <FaPills className="text-white text-xl" />
               </div>
               <div>
-                <h1 className="text-lg font-bold text-white">PharmaBot</h1>
-                <p className="text-xs text-zinc-400">AI Prescription Analysis</p>
+                <h1 className="text-lg font-bold text-gray-900">PharmaBot</h1>
+                <p className="text-xs text-gray-600">Prescription Analysis</p>
               </div>
             </div>
           </div>
-        </motion.header>
+        </header>
       )}
 
       {/* Main Content */}
@@ -58,10 +54,10 @@ export default function AppLayout({
         <AnimatePresence mode="wait">
           <motion.div
             key={pathname}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
           >
             {children}
           </motion.div>
@@ -70,11 +66,7 @@ export default function AppLayout({
 
       {/* Bottom Navigation */}
       {showBottomNav && (
-        <motion.nav
-          initial={{ y: 100 }}
-          animate={{ y: 0 }}
-          className="fixed bottom-0 left-0 right-0 z-40 bg-zinc-900/95 backdrop-blur-lg border-t border-zinc-800"
-        >
+        <nav className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-lg border-t border-gray-200 shadow-lg">
           <div className="flex items-center justify-around px-2 py-2">
             {navItems.map((item) => {
               const active = isActive(item.path)
@@ -84,18 +76,13 @@ export default function AppLayout({
                   onClick={() => router.push(item.path)}
                   className="flex-1 flex flex-col items-center justify-center py-2 relative group"
                 >
-                  <motion.div
-                    whileTap={{ scale: 0.9 }}
+                  <div
                     className={`relative flex flex-col items-center transition-colors ${
-                      active ? 'text-indigo-400' : 'text-zinc-500 hover:text-zinc-300'
+                      active ? 'text-indigo-600' : 'text-gray-500 hover:text-gray-700'
                     }`}
                   >
                     {active && (
-                      <motion.div
-                        layoutId="activeTab"
-                        className="absolute -top-1 left-1/2 -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full shadow-lg shadow-indigo-500/50"
-                        transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                      />
+                      <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all" />
                     )}
                     <item.icon 
                       className={`text-2xl mb-1 transition-all ${
@@ -107,12 +94,12 @@ export default function AppLayout({
                     }`}>
                       {item.label}
                     </span>
-                  </motion.div>
+                  </div>
                 </button>
               )
             })}
           </div>
-        </motion.nav>
+        </nav>
       )}
     </div>
   )

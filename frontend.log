@@ -2442,3 +2442,177 @@ digest: "1165877678"
  ✓ Compiled /not-found in 501ms (1625 modules)
  ✓ Compiled /dashboard/scan in 184ms (797 modules)
  ✓ Compiled /dashboard/profile in 216ms (813 modules)
+ ✓ Compiled in 701ms (1625 modules)
+ ✓ Compiled /dashboard/profile in 234ms (810 modules)
+ ✓ Compiled /not-found in 157ms (1632 modules)
+ ✓ Compiled in 679ms (1625 modules)
+ ✓ Compiled /not-found in 322ms (1616 modules)
+ ✓ Compiled /dashboard/profile in 128ms (813 modules)
+ ✓ Compiled in 808ms (1646 modules)
+ ✓ Compiled in 512ms (1646 modules)
+ ✓ Compiled in 352ms (1625 modules)
+ ✓ Compiled /not-found in 395ms (1616 modules)
+ ⨯ ./src/app/dashboard/profile/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+    ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/profile/page.tsx[0m:37:1]
+ [2m37[0m |   }
+ [2m38[0m | 
+ [2m39[0m |   return (
+ [2m40[0m |     <AppLayout>
+    : [31;1m     ^^^^^^^^^[0m
+ [2m41[0m |       <Toaster position="top-center" />
+ [2m42[0m |       
+ [2m43[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/profile/page.tsx
+ ⨯ ./src/app/dashboard/profile/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+    ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/profile/page.tsx[0m:37:1]
+ [2m37[0m |   }
+ [2m38[0m | 
+ [2m39[0m |   return (
+ [2m40[0m |     <AppLayout>
+    : [31;1m     ^^^^^^^^^[0m
+ [2m41[0m |       <Toaster position="top-center" />
+ [2m42[0m |       
+ [2m43[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/profile/page.tsx
+ ⨯ ./src/app/dashboard/profile/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+    ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/profile/page.tsx[0m:37:1]
+ [2m37[0m |   }
+ [2m38[0m | 
+ [2m39[0m |   return (
+ [2m40[0m |     <AppLayout>
+    : [31;1m     ^^^^^^^^^[0m
+ [2m41[0m |       <Toaster position="top-center" />
+ [2m42[0m |       
+ [2m43[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/profile/page.tsx
+ ⨯ ./src/app/dashboard/profile/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+    ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/profile/page.tsx[0m:37:1]
+ [2m37[0m |   }
+ [2m38[0m | 
+ [2m39[0m |   return (
+ [2m40[0m |     <AppLayout>
+    : [31;1m     ^^^^^^^^^[0m
+ [2m41[0m |       <Toaster position="top-center" />
+ [2m42[0m |       
+ [2m43[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/profile/page.tsx
+ ⨯ ./src/app/dashboard/history/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+    ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/history/page.tsx[0m:43:1]
+ [2m43[0m |   }
+ [2m44[0m | 
+ [2m45[0m |   return (
+ [2m46[0m |     <AppLayout>
+    : [31;1m     ^^^^^^^^^[0m
+ [2m47[0m |       <Toaster position="top-center" />
+ [2m48[0m |       
+ [2m49[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/history/page.tsx
+ ⨯ ./src/app/dashboard/history/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+    ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/history/page.tsx[0m:43:1]
+ [2m43[0m |   }
+ [2m44[0m | 
+ [2m45[0m |   return (
+ [2m46[0m |     <AppLayout>
+    : [31;1m     ^^^^^^^^^[0m
+ [2m47[0m |       <Toaster position="top-center" />
+ [2m48[0m |       
+ [2m49[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/history/page.tsx
+ ○ Compiling /not-found ...
+ ⨯ ./src/app/dashboard/history/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+    ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/history/page.tsx[0m:43:1]
+ [2m43[0m |   }
+ [2m44[0m | 
+ [2m45[0m |   return (
+ [2m46[0m |     <AppLayout>
+    : [31;1m     ^^^^^^^^^[0m
+ [2m47[0m |       <Toaster position="top-center" />
+ [2m48[0m |       
+ [2m49[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/history/page.tsx
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ ./src/app/dashboard/history/page.tsx
+Error: 
+  [31mx[0m Unexpected token `AppLayout`. Expected jsx identifier
+    ,-[[36;1;4m/Users/shagato/Desktop/PharmaBot/pharmabot_tech/frontend/src/app/dashboard/history/page.tsx[0m:43:1]
+ [2m43[0m |   }
+ [2m44[0m | 
+ [2m45[0m |   return (
+ [2m46[0m |     <AppLayout>
+    : [31;1m     ^^^^^^^^^[0m
+ [2m47[0m |       <Toaster position="top-center" />
+ [2m48[0m |       
+ [2m49[0m |       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/dashboard/history/page.tsx
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled /not-found in 519ms (1616 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 426ms (1630 modules)
+ ✓ Compiled /dashboard/profile in 324ms (813 modules)
+ ✓ Compiled in 955ms (1630 modules)
+ ✓ Compiled in 747ms (1625 modules)
+ ○ Compiling /not-found ...
+ ✓ Compiled /not-found in 589ms (1616 modules)
+ ✓ Compiled in 540ms (1630 modules)

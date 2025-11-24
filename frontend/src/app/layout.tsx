@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'PharmaBot - Prescription Scanner',
-  description: 'AI-powered prescription scanning and analysis',
+  description: 'Automated prescription scanning and analysis',
 }
 
 export default function RootLayout({

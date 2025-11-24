@@ -96,26 +96,19 @@ export default function ScanPage() {
       
       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <h2 className="text-2xl font-bold text-white mb-2 flex items-center">
-            <FaCamera className="mr-3 text-indigo-400" />
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2 flex items-center">
+            <FaCamera className="mr-3 text-indigo-600" />
             Scan Prescription
           </h2>
-          <p className="text-zinc-400">
-            Upload a prescription image for AI analysis
+          <p className="text-gray-600">
+            Upload a prescription image for analysis
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Upload Section */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.1 }}
-          >
+          <div>
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
@@ -140,25 +133,21 @@ export default function ScanPage() {
                   onDragLeave={handleDragLeave}
                   className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-all ${
                     isDragging
-                      ? 'border-indigo-500 bg-indigo-950/30'
-                      : 'border-zinc-700 hover:border-indigo-600 hover:bg-zinc-800/50'
+                      ? 'border-indigo-500 bg-indigo-50'
+                      : 'border-gray-300 hover:border-indigo-500 hover:bg-gray-50'
                   }`}
                 >
-                  <FaCamera className="mx-auto h-12 w-12 text-zinc-500 mb-4" />
-                  <p className="text-sm font-semibold text-zinc-300 mb-1">
+                  <FaCamera className="mx-auto h-12 w-12 text-gray-400 mb-4" />
+                  <p className="text-sm font-semibold text-gray-700 mb-1">
                     Click to upload or drag and drop
                   </p>
-                  <p className="text-xs text-zinc-500">
+                  <p className="text-xs text-gray-500">
                     PNG, JPG, JPEG up to 10MB
                   </p>
                 </div>
 
                 {preview && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="mt-4 relative"
-                  >
+                  <div className="mt-4 relative">
                     <img
                       src={preview}
                       alt="Preview"
@@ -173,7 +162,7 @@ export default function ScanPage() {
                     >
                       <FaTimes />
                     </button>
-                  </motion.div>
+                  </div>
                 )}
 
                 {selectedFile && !result && (
@@ -198,54 +187,42 @@ export default function ScanPage() {
                 )}
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
 
           {/* Results Section */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-          >
+          <div>
             <Card className="h-full">
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <FaRobot className="mr-2 text-purple-600" />
                   Analysis Results
                 </CardTitle>
-                <CardDescription>AI-powered prescription analysis</CardDescription>
+                <CardDescription>Automated prescription analysis</CardDescription>
               </CardHeader>
               <CardContent>
                 <AnimatePresence mode="wait">
                   {loading ? (
-                    <motion.div
+                    <div
                       key="loading"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
                       className="flex flex-col items-center justify-center h-64 space-y-4"
                     >
-                      <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                      <div
                       >
                         <FaSpinner className="w-16 h-16 text-indigo-600" />
-                      </motion.div>
-                      <p className="text-lg font-semibold text-white">Analyzing prescription...</p>
-                      <p className="text-sm text-zinc-400">This may take a few seconds</p>
-                    </motion.div>
+                      </div>
+                      <p className="text-lg font-semibold text-gray-900">Analyzing prescription...</p>
+                      <p className="text-sm text-gray-600">This may take a few seconds</p>
+                    </div>
                   ) : result ? (
-                    <motion.div
+                    <div
                       key="result"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
                       className="space-y-4"
                     >
-                      <div className="flex items-start space-x-3 p-4 bg-green-950/30 border border-green-900/50 rounded-lg mb-4">
-                        <FaCheckCircle className="text-green-400 mt-1 flex-shrink-0" size={20} />
+                      <div className="flex items-start space-x-3 p-4 bg-green-50 border border-green-200 rounded-lg mb-4">
+                        <FaCheckCircle className="text-green-600 mt-1 flex-shrink-0" size={20} />
                         <div>
-                          <h4 className="font-semibold text-green-400">Analysis Complete</h4>
-                          <p className="text-sm text-green-300/70 mt-1">Successfully analyzed prescription</p>
+                          <h4 className="font-semibold text-green-700">Analysis Complete</h4>
+                          <p className="text-sm text-green-600 mt-1">Successfully analyzed prescription</p>
                         </div>
                       </div>
 
@@ -253,19 +230,19 @@ export default function ScanPage() {
                         <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
                           {/* Patient Information */}
                           {result.structured_data.patient_details && (
-                            <div className="bg-gradient-to-br from-indigo-950/30 to-purple-950/30 p-4 rounded-lg border border-indigo-900/50">
-                              <h4 className="text-sm font-bold mb-3 flex items-center text-white">
-                                <FaUser className="mr-2 text-indigo-400" />
+                            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-4 rounded-lg border border-indigo-200">
+                              <h4 className="text-sm font-bold mb-3 flex items-center text-gray-900">
+                                <FaUser className="mr-2 text-indigo-600" />
                                 Patient Information
                               </h4>
                               <div className="grid grid-cols-2 gap-3">
                                 <div>
-                                  <p className="text-xs text-zinc-400 mb-1">Name</p>
-                                  <p className="font-semibold text-white">{result.structured_data.patient_details.patient_name || 'N/A'}</p>
+                                  <p className="text-xs text-gray-600 mb-1">Name</p>
+                                  <p className="font-semibold text-gray-900">{result.structured_data.patient_details.patient_name || 'N/A'}</p>
                                 </div>
                                 <div>
-                                  <p className="text-xs text-zinc-400 mb-1">Age</p>
-                                  <p className="font-semibold text-white">{result.structured_data.patient_details.patient_age || 'N/A'}</p>
+                                  <p className="text-xs text-gray-600 mb-1">Age</p>
+                                  <p className="font-semibold text-gray-900">{result.structured_data.patient_details.patient_age || 'N/A'}</p>
                                 </div>
                               </div>
                             </div>
@@ -277,16 +254,16 @@ export default function ScanPage() {
                               {result.structured_data.medications.map((med: any, index: number) => (
                                 <div
                                   key={index}
-                                  className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4"
+                                  className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm"
                                 >
                                   <div className="flex items-start justify-between mb-3">
                                     <div>
-                                      <h5 className="font-bold text-white flex items-center">
-                                        <FaPills className="mr-2 text-purple-400" size={16} />
+                                      <h5 className="font-bold text-gray-900 flex items-center">
+                                        <FaPills className="mr-2 text-purple-600" size={16} />
                                         {med.medicine_name}
                                       </h5>
                                       {med.generic_name && (
-                                        <p className="text-xs text-zinc-400 mt-1">({med.generic_name})</p>
+                                        <p className="text-xs text-gray-600 mt-1">({med.generic_name})</p>
                                       )}
                                     </div>
                                     {med.frequency_code && (
@@ -301,14 +278,14 @@ export default function ScanPage() {
                                   </div>
 
                                   {med.timing && med.timing.length > 0 && (
-                                    <div className="bg-blue-950/30 border border-blue-900/50 p-3 rounded-lg">
-                                      <p className="text-xs font-semibold text-blue-300 mb-2 flex items-center">
+                                    <div className="bg-blue-50 border border-blue-200 p-3 rounded-lg">
+                                      <p className="text-xs font-semibold text-blue-700 mb-2 flex items-center">
                                         <FaClock className="mr-1" />
                                         Timing
                                       </p>
                                       <div className="flex flex-wrap gap-2">
                                         {med.timing.map((time: string, idx: number) => (
-                                          <span key={idx} className="px-2 py-1 bg-blue-900/30 border border-blue-800 rounded text-xs font-mono text-blue-300">
+                                          <span key={idx} className="px-2 py-1 bg-blue-100 border border-blue-300 rounded text-xs font-mono text-blue-700">
                                             {time}
                                           </span>
                                         ))}
@@ -321,8 +298,8 @@ export default function ScanPage() {
                           )}
                         </div>
                       ) : (
-                        <div className="bg-zinc-800/50 p-4 rounded-lg border border-zinc-700">
-                          <pre className="whitespace-pre-wrap text-sm text-zinc-300 font-sans overflow-x-auto">
+                        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                          <pre className="whitespace-pre-wrap text-sm text-gray-700 font-sans overflow-x-auto">
                             {result.analysis}
                           </pre>
                         </div>
@@ -336,26 +313,23 @@ export default function ScanPage() {
                           View History
                         </Button>
                       </div>
-                    </motion.div>
+                    </div>
                   ) : (
-                    <motion.div
+                    <div
                       key="empty"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
                       className="flex flex-col items-center justify-center h-64 text-center"
                     >
-                      <div className="w-20 h-20 bg-zinc-800 rounded-full flex items-center justify-center mb-4">
-                        <FaRobot className="w-10 h-10 text-zinc-500" />
+                      <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                        <FaRobot className="w-10 h-10 text-gray-400" />
                       </div>
-                      <p className="text-lg font-semibold text-white mb-1">No analysis yet</p>
-                      <p className="text-sm text-zinc-400">Upload a prescription to get started</p>
-                    </motion.div>
+                      <p className="text-lg font-semibold text-gray-900 mb-1">No analysis yet</p>
+                      <p className="text-sm text-gray-600">Upload a prescription to get started</p>
+                    </div>
                   )}
                 </AnimatePresence>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
         </div>
       </div>
     </AppLayout>

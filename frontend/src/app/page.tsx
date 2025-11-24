@@ -20,8 +20,8 @@ export default function Home() {
   const features = [
     {
       icon: <FaRobot className="w-8 h-8" />,
-      title: 'AI-Powered Analysis',
-      description: 'Advanced Gemini AI reads and interprets prescriptions instantly with high accuracy.'
+      title: 'Automated Analysis',
+      description: 'Advanced technology reads and interprets prescriptions instantly with high accuracy.'
     },
     {
       icon: <FaPills className="w-8 h-8" />,
@@ -101,7 +101,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto"
           >
-            Upload your prescription and let our AI-powered assistant analyze it in seconds.
+            Upload your prescription and let our automated system analyze it in seconds.
             Safe, secure, and incredibly accurate.
           </motion.p>
 

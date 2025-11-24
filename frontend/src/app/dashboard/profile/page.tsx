@@ -42,14 +42,11 @@ export default function ProfilePage() {
       
       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
         {/* Profile Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <Card className="bg-gradient-to-br from-indigo-600 to-purple-600 border-0 shadow-xl shadow-indigo-900/20">
+        <div>
+          <Card className="bg-gradient-to-br from-indigo-500 to-purple-600 border-0 shadow-lg">
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <Avatar className="h-20 w-20 ring-4 ring-white/20">
+                <Avatar className="h-20 w-20 ring-4 ring-white/30">
                   <AvatarImage src="/avatar-placeholder.png" />
                   <AvatarFallback className="bg-white text-indigo-600 text-2xl font-bold">
                     {user?.username?.charAt(0).toUpperCase() || 'U'}
@@ -62,65 +59,53 @@ export default function ProfilePage() {
               </div>
             </CardContent>
           </Card>
-        </motion.div>
+        </div>
 
-        {/* Account Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-        >
-          <h3 className="text-lg font-bold text-white mb-3">Account</h3>
-          <Card className="bg-zinc-900/50 border-zinc-800">
+        {/* Account Information */}
+        <div>
+          <h3 className="text-lg font-bold text-gray-900 mb-3">Account</h3>
+          <Card className="bg-white border-gray-200 shadow-sm">
             <CardContent className="p-4">
               <div className="space-y-4">
                 <div>
-                  <p className="text-sm text-zinc-400 mb-1">Username</p>
-                  <p className="font-semibold text-white">{user?.username || 'Loading...'}</p>
+                  <p className="text-sm text-gray-600 mb-1">Username</p>
+                  <p className="font-semibold text-gray-900">{user?.username || 'Loading...'}</p>
                 </div>
-                <Separator className="bg-zinc-800" />
+                <Separator className="bg-gray-200" />
                 <div>
-                  <p className="text-sm text-zinc-400 mb-1">Member Since</p>
-                  <p className="font-semibold text-white">November 2025</p>
+                  <p className="text-sm text-gray-600 mb-1">Member Since</p>
+                  <p className="font-semibold text-gray-900">November 2025</p>
                 </div>
               </div>
             </CardContent>
           </Card>
-        </motion.div>
+        </div>
 
-        {/* About Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          <h3 className="text-lg font-bold text-white mb-3">About</h3>
-          <Card className="bg-zinc-900/50 border-zinc-800">
+        {/* About */}
+        <div>
+          <h3 className="text-lg font-bold text-gray-900 mb-3">About</h3>
+          <Card className="bg-white border-gray-200 shadow-sm">
             <CardContent className="p-4">
               <div className="space-y-1">
-                <p className="text-sm text-zinc-400">Version</p>
-                <p className="font-semibold text-white">1.0.0</p>
+                <p className="text-sm text-gray-600">Version</p>
+                <p className="font-semibold text-gray-900">1.0.0</p>
               </div>
             </CardContent>
           </Card>
-        </motion.div>
+        </div>
 
-        {/* Logout Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
+        {/* Sign Out */}
+        <div>
           <Button
             onClick={handleLogout}
             variant="outline"
-            className="w-full border-red-900/50 text-red-400 hover:bg-red-950/30 hover:border-red-800"
+            className="w-full border-red-200 text-red-600 hover:bg-red-50 hover:border-red-300"
             size="lg"
           >
             <FaSignOutAlt className="mr-2" />
             Sign Out
           </Button>
-        </motion.div>
+        </div>
       </div>
     </AppLayout>
   )

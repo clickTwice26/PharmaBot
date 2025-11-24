@@ -76,99 +76,75 @@ export default function DashboardPage() {
       
       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
         {/* Welcome Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <h2 className="text-2xl font-bold text-white mb-2">
-            Welcome back, {user?.username || 'User'}! 👋
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">
+            Welcome back, {user?.username || 'User'}
           </h2>
-          <p className="text-zinc-400">
-            Manage your prescriptions with AI-powered analysis
+          <p className="text-gray-600">
+            Manage your prescriptions with automated analysis
           </p>
-        </motion.div>
+        </div>
 
-        {/* Stats Cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="grid grid-cols-2 gap-4"
-        >
-          <Card className="bg-zinc-900/50 border-zinc-800">
+        {/* Stats */}
+        <div className="grid grid-cols-2 gap-4">
+          <Card className="bg-white border-gray-200 shadow-sm">
             <CardContent className="p-4 text-center">
-              <div className="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-1">
+              <div className="text-3xl font-bold text-indigo-600 mb-1">
                 {stats.totalPrescriptions}
               </div>
-              <div className="text-xs text-zinc-400">Total Scanned</div>
+              <div className="text-xs text-gray-600">Total Scanned</div>
             </CardContent>
           </Card>
-          <Card className="bg-zinc-900/50 border-zinc-800">
+          <Card className="bg-white border-gray-200 shadow-sm">
             <CardContent className="p-4 text-center">
-              <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">
+              <div className="text-3xl font-bold text-blue-600 mb-1">
                 {stats.upcomingDoses}
               </div>
-              <div className="text-xs text-zinc-400">Active Meds</div>
+              <div className="text-xs text-gray-600">Active Meds</div>
             </CardContent>
           </Card>
-        </motion.div>
+        </div>
 
         {/* Quick Actions */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          <h3 className="text-lg font-bold text-white mb-3">Quick Actions</h3>
+        <div>
+          <h3 className="text-lg font-bold text-gray-900 mb-3">Quick Actions</h3>
           <div className="grid grid-cols-2 gap-4">
-            {quickActions.map((action, index) => (
-              <motion.div
+            {quickActions.map((action) => (
+              <Card 
                 key={action.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 + index * 0.05 }}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                className="cursor-pointer hover:shadow-lg transition-all bg-white border-gray-200"
+                onClick={() => router.push(action.path)}
               >
-                <Card 
-                  className="cursor-pointer hover:bg-zinc-800/50 transition-all bg-zinc-900/50 border-zinc-800"
-                  onClick={() => router.push(action.path)}
-                >
-                  <CardContent className="p-6">
-                    <div className={`w-14 h-14 bg-gradient-to-br ${action.color} rounded-xl flex items-center justify-center mb-3 shadow-lg`}>
-                      <action.icon className="text-white text-2xl" />
-                    </div>
-                    <h4 className="font-semibold text-white mb-1">{action.label}</h4>
-                    <p className="text-xs text-zinc-400">{action.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                <CardContent className="p-6">
+                  <div className={`w-14 h-14 bg-gradient-to-br ${action.color} rounded-xl flex items-center justify-center mb-3 shadow-md`}>
+                    <action.icon className="text-white text-2xl" />
+                  </div>
+                  <h4 className="font-semibold text-gray-900 mb-1">{action.label}</h4>
+                  <p className="text-xs text-gray-600">{action.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Info Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <Card className="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border-indigo-800/50">
+        <div>
+          <Card className="bg-gradient-to-br from-indigo-50 to-purple-50 border-indigo-200">
             <CardContent className="p-4">
               <div className="flex items-start space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
+                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md">
                   <FaExclamationTriangle className="text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-1">AI-Powered Analysis</h4>
-                  <p className="text-sm text-zinc-400">
-                    Upload prescription images for instant AI analysis and structured medication data extraction.
+                  <h4 className="font-semibold text-gray-900 mb-1">Automated Analysis</h4>
+                  <p className="text-sm text-gray-700">
+                    Upload prescription images for instant analysis and structured medication data extraction.
                   </p>
                 </div>
               </div>
             </CardContent>
           </Card>
-        </motion.div>
+        </div>
       </div>
     </AppLayout>
   )
